@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title></title>
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+	<script src="../js/react.js"></script>
+	<script src="../js/JSXTransformer.js"></script>
+</head>
+<body>
+  <script type="text/jsx">
+    /** @jsx React.DOM */
+    var Text = React.createClass({
+      getDefaultProps: function() {
+        return {
+          fgColor: 'pink',
+          bgColor: 'red'
+        };
+      },
+      render: function() {
+        var styles = {
+          color: this.props.fgColor,
+          backgroundColor: this.props.bgColor
+        };
+        return (
+          <p style={styles}>{this.props.content}</p>
+        );
+      }
+    });
+
+    React.render(<Text bgColor='black' fgColor='blue' content="this is the content"/>, document.body);
+  </script>
+</body>
+</html>
